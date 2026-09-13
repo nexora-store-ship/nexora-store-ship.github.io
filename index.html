@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEXORA — Everything. Everywhere.</title>
+<meta name="description" content="NEXORA — a global marketplace for electronics, fashion, beauty, home, gaming and automotive products.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="topbar">
+  <span>🌐 Worldwide Shipping (Except Syria)</span>
+  <span>🚚 Free Shipping Over $50</span>
+  <span>🛡 Secure Payments</span>
+  <span>🎧 24/7 Customer Support</span>
+</div>
+
+<header>
+  <div class="logo">NEXORA <small>Everything. Everywhere.</small></div>
+  <div class="search"><input id="searchInput" placeholder="Search products, brands and more..."><button onclick="searchProducts()">⌕</button></div>
+  <div class="icons"><button>♙</button><button>♡</button><button onclick="toggleCart()">🛒 <b id="cartCount">0</b></button></div>
+</header>
+
+<nav>
+  <button class="categoryBtn" onclick="showAll()">☰ All Categories</button>
+  <a href="#" onclick="showAll()">Home</a>
+  <a href="#products" onclick="filterCategory('Electronics')">Electronics</a>
+  <a href="#products" onclick="filterCategory('Fashion')">Fashion</a>
+  <a href="#products" onclick="filterCategory('Beauty & Care')">Beauty & Care</a>
+  <a href="#products" onclick="filterCategory('Home & Living')">Home & Living</a>
+  <a href="#products" onclick="filterCategory('Gaming')">Gaming</a>
+  <a href="#products" onclick="filterCategory('Automotive')">Automotive</a>
+</nav>
+
+<main>
+<section class="hero">
+  <div class="heroText">
+    <p class="eyebrow">WELCOME TO NEXORA</p>
+    <h1>Everything<br><span>You Need, In One Place</span></h1>
+    <p>Discover products from around the world. Quality, variety and competitive prices — all in one destination.</p>
+    <button class="primary" onclick="document.querySelector('#products').scrollIntoView({behavior:'smooth'})">Shop Now →</button>
+  </div>
+  <div class="heroVisual">NEXORA<br><small>GLOBAL MARKETPLACE</small></div>
+</section>
+
+<section class="benefits">
+  <div>🌐 <strong>Worldwide Shipping</strong><small>Except Syria</small></div>
+  <div>🛡 <strong>Secure Payments</strong><small>Protected checkout</small></div>
+  <div>↻ <strong>Easy Returns</strong><small>Subject to policy</small></div>
+  <div>🎧 <strong>24/7 Support</strong><small>We're here to help</small></div>
+  <div>★ <strong>Trusted Service</strong><small>Customer focused</small></div>
+</section>
+
+<section class="section">
+  <div class="sectionHead"><div><h2>Shop by Category</h2><p>Explore our growing collection.</p></div></div>
+  <div class="categories">
+    <button onclick="filterCategory('Electronics')"><span>📱</span><strong>Electronics</strong><small>Smart tech & accessories</small></button>
+    <button onclick="filterCategory('Fashion')"><span>👕</span><strong>Fashion</strong><small>Style & accessories</small></button>
+    <button onclick="filterCategory('Beauty & Care')"><span>💄</span><strong>Beauty & Care</strong><small>Personal care essentials</small></button>
+    <button onclick="filterCategory('Home & Living')"><span>🏠</span><strong>Home & Living</strong><small>For your everyday life</small></button>
+    <button onclick="filterCategory('Gaming')"><span>🎮</span><strong>Gaming</strong><small>Gear for gamers</small></button>
+    <button onclick="filterCategory('Automotive')"><span>🚗</span><strong>Automotive</strong><small>Car accessories</small></button>
+  </div>
+</section>
+
+<section class="section" id="products">
+  <div class="sectionHead">
+    <div><h2>🔥 Featured Products</h2><p>Demo products — supplier products will be added after the store setup.</p></div>
+    <button class="linkBtn" onclick="showAll()">View All →</button>
+  </div>
+  <div id="productGrid" class="products"></div>
+</section>
+
+<section class="banner">
+  <div><p class="eyebrow">NEXORA AUTO</p><h2>Upgrade Your Ride</h2><p>Premium automotive accessories. Better style. More comfort.</p><button class="primary" onclick="filterCategory('Automotive')">Shop Automotive →</button></div>
+  <div class="car">🚘</div>
+</section>
+
+<section class="section">
+  <div class="sectionHead"><div><h2>⭐ Best Sellers</h2><p>Popular products customers love.</p></div></div>
+  <div class="miniGrid">
+    <span>📱 Phone Accessories</span><span>👟 Sneakers</span><span>⌚ Smart Watches</span><span>📷 Cameras</span><span>🎧 Headphones</span><span>🎮 Gaming Gear</span>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="footerTop">
+    <div class="logo">NEXORA <small>Everything. Everywhere.</small></div>
+    <div><h3>Join Our Newsletter</h3><p>Get updates on new products and special offers.</p><div class="newsletter"><input placeholder="Enter your email address"><button onclick="alert('Newsletter signup will be connected after deployment.')">Subscribe</button></div></div>
+    <div><h3>Follow Us</h3><p>Facebook · Instagram · TikTok · YouTube</p></div>
+  </div>
+  <div class="footerLinks">
+    <div><strong>Quick Links</strong><span>Home</span><span>About Us</span><span>Contact Us</span><span>FAQ</span></div>
+    <div><strong>Customer Service</strong><span>Shipping Policy</span><span>Return & Refund Policy</span><span>Privacy Policy</span><span>Terms & Conditions</span></div>
+    <div><strong>Categories</strong><span>Electronics</span><span>Fashion</span><span>Beauty & Care</span><span>Home & Living</span><span>Gaming</span><span>Automotive</span></div>
+    <div><strong>Payments</strong><span>PayPal · Visa · Mastercard</span><span>Payment integration pending</span></div>
+  </div>
+  <div class="copyright">© 2026 NEXORA. All rights reserved. · Syria is excluded from shipping and sales.</div>
+</footer>
+
+<aside id="cart" class="cart">
+  <div class="cartHead"><h2>Your Cart</h2><button onclick="toggleCart()">✕</button></div>
+  <div id="cartItems"></div>
+  <div class="cartTotal">Total: <strong id="cartTotal">$0.00</strong></div>
+  <button class="primary checkout" onclick="checkout()">Proceed to Checkout</button>
+  <p class="note">Live payment processing will be connected only after the legal business/payment setup is completed.</p>
+</aside>
+
+<script src="script.js"></script>
+</body>
+</html>
